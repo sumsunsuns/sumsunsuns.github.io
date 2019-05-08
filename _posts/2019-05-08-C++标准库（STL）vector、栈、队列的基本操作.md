@@ -2,7 +2,7 @@
 layout:     post                    # 使用的布局（不需要改）
 title:      C++标准库（STL）vector、栈、队列的基本操作             # 标题 
 subtitle:   详细讲述了STL中stack、queue、vector的使用 #副标题
-date:       2018-05-08             # 时间
+date:       2019-05-08             # 时间
 author:     BY Tony_Huang                      # 作者
 header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
 catalog: true                       # 是否归档
@@ -11,7 +11,7 @@ tags:                               #标签
 ---
 
 # C++标准库
-## 在C++标准中，STL有13个头文件，写C++程序时添加这些头文件就可以让我们方便地使用这些好用数据结构
+## 在C++标准中，STL有13个头文件，写C++程序时添加这些头文件就可以让我们方便地使用这些好用数据结构,方便编程
 C++标准库英文名：Standard Template Libary，是由惠普实验室开发的一系列软件的统称，是一系列标准模板的组合，比较好用，可以直接中加入这些库函数文件使用这些好用的数据结构。
       1、 #include<stack>   //栈的头文件
      stack<Type>T，Type为数据类型，既可以是整形（int），浮点型（float）也可以是二叉树指针(TreeNode *)等等
