@@ -1,10 +1,10 @@
 # Site settings
 title: Blog_Tony Huang
 SEOTitle: 托尼的博客 | BY Blog
-header-img: img/desk.jpg
+header-img: img/1.jpg
 email: changbahuang@sina.com
 description: "I AM A PROGRAMMER"
-keyword: "BY, BY Blog, 昌霸的博客, huachangba, 黄昌霸, iOS, Apple, iPhone"
+keyword: "BY, BY Blog, 昌霸的博客, huachangba, 黄昌霸, C++, Software Engineer, iphone"
 url: "http://qiubaiying.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
