@@ -23,6 +23,7 @@ RSS: false
 github_username:    Yunfanzhilu
 #facebook_username:  baiying.qiu.7
 jianshu_username:   36be3ae61d41
+csdn_username:      weixin_42036617
 #twitter_username:   qiubaiying
 
 
@@ -99,16 +100,10 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "lx青萍之末",
+        href: "https://me.csdn.net/daaikuaichuan"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "拂晓123",
+        href: "https://me.csdn.net/woheyusu123"
     }
 ]
