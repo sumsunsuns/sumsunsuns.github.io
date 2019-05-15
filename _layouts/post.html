@@ -101,6 +101,7 @@ layout: default
                     distractionFreeMode: {{site.gitalk.distractionFreeMode}},
                     id: md5(location.pathname),
                     });
+	           console.log(md5(location.pathname));
                     gitalk.render('gitalk-container');
                 </script>
                 {% endif %}
