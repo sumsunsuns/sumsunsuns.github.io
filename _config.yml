@@ -1,13 +1,13 @@
 # Site settings
 title: Blog_Tony Huang
-SEOTitle: Tony's Bolg
+SEOTitle: Tony's Blog
 header-img: img/post-bg-universe.jpg
 email: changbahuang@sina.com
 description: "I AM A PROGRAMMER"
 keyword: "BY, BY Blog, 昌霸的博客, huachangba, 黄昌霸, C++, Software Engineer,millimeter wave radar,ADAS"
 url: "http://qiubaiying.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
+github_repo: "https://github.com/Yunfanzhilu/Yunfanzhilu.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
