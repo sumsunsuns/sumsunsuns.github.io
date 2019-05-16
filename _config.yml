@@ -1,10 +1,10 @@
 # Site settings
 title: Blog_Tony Huang
-SEOTitle: 托尼的博客 | BY Blog
+SEOTitle: Tony's Bolg
 header-img: img/post-bg-universe.jpg
 email: changbahuang@sina.com
 description: "I AM A PROGRAMMER"
-keyword: "BY, BY Blog, 昌霸的博客, huachangba, 黄昌霸, C++, Software Engineer, iphone"
+keyword: "BY, BY Blog, 昌霸的博客, huachangba, 黄昌霸, C++, Software Engineer,millimeter wave radar,ADAS"
 url: "http://qiubaiying.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
@@ -75,11 +75,11 @@ gitalk:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: b50bf2b12b5338a1845e33832976fd68
+#ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
-ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+#ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+#ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
@@ -87,7 +87,7 @@ ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定�
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
 
 
