@@ -1,6 +1,6 @@
 ---
 layout:     post                    # 使用的布局（不需要改）
-title:      深度学习-初识Tensorflow框架、Keras框架               # 标题 
+title:      深度学习-初识Tensorflow框架（上篇）               # 标题 
 subtitle:    #副标题
 date:       2019-05-19              # 时间
 author:     BY Tony Huang                     # 作者
