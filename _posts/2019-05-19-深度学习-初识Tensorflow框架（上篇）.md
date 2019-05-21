@@ -11,16 +11,16 @@ tags:                               #标签
     - TensorFlow
     - Keras
 ---
- # ![post-bg-learning](G:\个人创作\图片\post-bg-learning.jpg)摘要
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190521194702374.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjAzNjYxNw==,size_16,color_FFFFFF,t_70)
+# 摘要
 
-​       这篇文章主要记述了博主初识深度学习的过程包括安装Tensorflow,，Keras的方法和其中遇到的问题，并以MINIST（基于Tensorflow）和CNN图片分类（基于Keras）学习两种框架的使用，最后对比一下两种框架。
+​       这篇文章主要记述了博主初识深度学习的过程包括安装Tensorflow,，Keras的方法和其中遇到的问题，并以MINIST（基于TensorFlow）为例子分别构建线性层的Softmax回归模型和多层卷积神经网络Softmax回归模型来学习框架的使用。
 
 # 环境说明
 
 ## 环境：
 
 - windows10
-
 - python3.7
 - 编译器：Spyder3.3.3
 
@@ -79,22 +79,13 @@ for step in range(0, 201):
 ```
 
 Spder运行结果:
-
-![QQ截图20190521145757](G:\个人创作\图片\QQ截图20190521145757.png)
-
-
-
-![TensorFlow](G:\个人创作\CSDN\TensorFlow_logo.jpg)
-
-​                                   
-
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190521194818257.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190521194825225.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjAzNjYxNw==,size_16,color_FFFFFF,t_70)
 ## Keras
 
 ### 概念
 
 ​      Keras是一个高级神经网络API，用Python编写，支持python2.7-3.6，能够在Tensorflow,CNTK或Theano之上运行，它的开发重点是实现快速研究（简单来说就是比Tensorflow使用方便，框架更灵巧简约，运算速度更快）
-
-
 
 ### Keras设计原则
 
@@ -106,7 +97,9 @@ Spder运行结果:
 
 - **使用Python**:没有声明格式的单独模型配置文件。模型在Python代码中描述，它紧凑，易于调试，并且易于扩展。
 
-  ![Keras图标](G:\个人创作\CSDN\Keras图标.jpg)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190521194840522.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjAzNjYxNw==,size_16,color_FFFFFF,t_70)
+
+*有关于Keras框架的使用将会在下一篇博客中以CNN图片分类为例讲解。*
 
 # 前期准备
 
@@ -231,7 +224,7 @@ $$
 
 可以很容易的为训练过程指定最小化误差用的损失函数，我们的损失函数是目标类别和预测类别之间的交叉熵，交叉熵是用来衡量我们的预测用于描述真相的低效性，它的定义如下：
 
-![](G:\个人创作\图片\QQ截图20190521162525.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190521195009936.png)
 
 y是我们预测的概率分布, y' 是实际的分布（我们输入的one-hot vector)。
 
@@ -243,7 +236,7 @@ y_=tf.placeholder(tf.float32, [None, 10])
 
 然后我们用
 
-![1558427365987](C:\Users\xjq\AppData\Roaming\Typora\typora-user-images\1558427365987.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2019052119495324.png)
 
 计算交叉熵，代码如下：
 
@@ -273,59 +266,25 @@ mnist.train.next_batch(1000)是从训练集里一次提取100张图片数据来�
 
 首先让我们找出那些预测正确的标签。`tf.argmax`能给出某个tensor对象在某一维上的其数据最大值所在的索引值。由于标签向量是由0,1组成，因此最大值1所在的索引位置就是类别标签，比如`tf.argmax(y,1)`返回的是模型对于任一输入x预测到的标签值，而 `tf.argmax(y_,1)` 代表正确的标签，我们可以用 `tf.equal` 来检测我们的预测是否真实标签匹配(索引位置一样表示匹配)。
 
-```python
+```
 correct_prediction = tf.equal(tf.arg_max(y, 1), tf.arg_max(y_, 1))
 ```
 
 这里返回一个布尔数组。为了计算我们分类的准确率，我们将布尔值转换为浮点数来代表对、错，然后取平均值。例如：`[True, False, True, True]`变为`[1,0,1,1]`，计算出平均值为`0.75`。
 
-```python
+```
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 ```
 
 我们可以计算出在测试数据上的准确率，大概是91%。
 
-```python
+```
 print(sess.run(accuracy, feed_dict={x: mnist.test.images,y_: mnist.test.labels}))
 ```
 
 在Spder3.3.3中结果如下图所示：
 
-![1558431042624](C:\Users\xjq\AppData\Roaming\Typora\typora-user-images\1558431042624.png)
-
-------
-
-
-
-## 基于CNN的图片分类（框架：Keras）
-
-> 在前一经典的MNIST的例子中，我们建立了一个线性层的softmax回归模型，得到的识别准确率为91%，这个在深度学习领域是一个比较低的识别率了，应用到实际生活中不太靠谱，那有没进一步提高识别准确率的办法呢？有——卷积神经网络（Convolutional Neural Networks，CNN）
-
-### 卷积神经网络简介
-
-卷积神经网络是一种多层神经网络，擅长处理图像特别是大图像的相关机器学习问题
-
-![](G:\个人创作\图片\卷积神经网络.jpg)
-
-
-
-这是一个最典型的卷积网络，由卷积层、池化层、全连接层组成。其中卷积层与池化层配合，组成多个卷积组，逐层提取特征，最终通过若干个全连接层完成分类。
-
-卷积层完成的操作，可以认为是受局部感受野概念的启发，而池化层，主要是为了降低数据维度。
-
-综合起来说，CNN通过卷积来模拟特征区分，并且通过卷积的权值共享及池化，来降低网络参数的数量级，最后通过传统神经网络完成分类等任务。
-
-### 卷积
-
-![1558432152233](C:\Users\xjq\AppData\Roaming\Typora\typora-user-images\1558432152233.png)
-
-### 池化
-
-池化就是简单的采样，如下图所示：
-
-![1558432196553](C:\Users\xjq\AppData\Roaming\Typora\typora-user-images\1558432196553.png)
-
-这样
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190521194915936.png)
 
 参考链接：
 
