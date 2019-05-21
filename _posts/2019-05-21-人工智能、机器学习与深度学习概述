@@ -3,11 +3,11 @@ title:      人工智能、机器学习与深度学习概述               # 标
 subtitle:    #副标题
 date:       2019-05-14              # 时间
 author:     BY Tony Huang                     # 作者
-header-img: img/post-bg-universe.jpg    #这篇文章标题背景图片
+header-img: img/post-bg-learning.jpg    #这篇文章标题背景图片
 catalog: true                       # 是否归档
 tags:                               #标签
     - 深度学习
     - 机器学习
     - 人工智能
     - 简介
-这篇文章
+这篇文章详细介绍了人工智能、机器学习与深度学习的区别和联系，用简单的例子
