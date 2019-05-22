@@ -1,6 +1,6 @@
 ---
 layout:     post                    # 使用的布局（不需要改）
-title:      深度学习-初识Tensorflow框架（上篇）               # 标题 
+title:      深度学习-初识Tensorflow框架（上篇）笔记               # 标题 
 subtitle:    #副标题
 date:       2019-05-19              # 时间
 author:     BY Tony Huang                     # 作者
@@ -12,6 +12,7 @@ tags:                               #标签
     - Keras
 ---
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190521194702374.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjAzNjYxNw==,size_16,color_FFFFFF,t_70)
+# 以下为读书笔记
 # 摘要
 
 ​       这篇文章主要记述了博主初识深度学习的过程包括安装Tensorflow,，Keras的方法和其中遇到的问题，并以MINIST（基于TensorFlow）为例子分别构建线性层的Softmax回归模型和多层卷积神经网络Softmax回归模型来学习框架的使用。
