@@ -187,9 +187,7 @@ b_conv1 = bias_variable([32])
 ​第二句意思是在每一个输出通道加一个偏置量（Offset）b,还记得那个公式吗？
 $$y=softmax(Wx+b)$$
 其中括号部分又可以写成:
-$$
-evidence_i=\sum_j{W_{i,j}x_j+b_i}
-$$
+$$evidence_i=\sum_j{W_{i,j}x_j+b_i}$$
 **第一层卷积这个tensor的shape大小为28×28×32**
 
 因此下一步就要进行x_image和权值向量的卷积啦
