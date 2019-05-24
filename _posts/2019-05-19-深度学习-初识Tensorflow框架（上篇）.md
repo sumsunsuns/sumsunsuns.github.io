@@ -1,7 +1,7 @@
 ---
 layout:     post                    # 使用的布局（不需要改）
-title:      深度学习-初识Tensorflow框架（上篇）笔记               # 标题 
-subtitle:    #副标题
+title:      深度学习-初识Tensorflow框架（上篇笔记）               # 标题 
+subtitle:   上篇内容为搭建线性层回归模型对MNIST进行识别的过程
 date:       2019-05-19              # 时间
 author:     BY Tony Huang                     # 作者
 header-img: img/post-bg-os-metro.jpg  #这篇文章标题背景图片
