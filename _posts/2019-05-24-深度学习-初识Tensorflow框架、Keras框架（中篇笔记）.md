@@ -188,7 +188,7 @@ b_conv1 = bias_variable([32])
 $$y=softmax(Wx+b)$$
 其中括号部分又可以写成:
 $$evidence_i=\sum_j{W_{i,j}x_j+b_i}$$
-**第一层卷积这个tensor的shape大小为28×28×32**
+**第一层卷积这个tensor的shape为28×28×32**
 
 因此下一步就要进行x_image和权值向量的卷积啦
 
@@ -200,7 +200,7 @@ h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
 
 *注意这里是卷积，公式上是乘法，这就是CNN对比线性层回归的优势所在，卷积更能体现目标特征值，优化训练数据。*
 
-​解释一波ReLU激活函数：全称修正线性单元（Rectified linear unit,ReLu）,个人理解简单来说就是:**保留evidence中有用的目标特征值，更好的挖掘相关特征，你和训练数据。**详情参考：[ReLU激活函数：简单之美](https://blog.csdn.net/cherrylvlei/article/details/53149381)
+​	解释一波ReLU激活函数：全称修正线性单元（Rectified linear unit,ReLu）,个人理解简单来说就是:**保留evidence中有用的目标特征值，更好的挖掘相关特征，拟合训练数据。**详情参考：[ReLU激活函数：简单之美](https://blog.csdn.net/cherrylvlei/article/details/53149381)
 
 #### 第一层池化
 
@@ -208,11 +208,11 @@ h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
 h_pool1 = max_pool_2x2(h_conv1)
 ```
 
-意思是最大值下采样（池化），现在shape大小为14×14×32。
+意思是最大值下采样（池化），**现在这个tensor的shape为14×14×32**。
 
 #### 第二层卷积
 
-通常为了更好地识别效果，我们会设置多层卷积神经网络，**根据Hebb学习规则，某种特征训练的次数越多，在以后的识别过程中就越容易被检测。**
+通常为了有更好地识别效果，我们会设置多层卷积神经网络，**根据Hebb学习规则，某种特征训练的次数越多，在以后的识别过程中就越容易被检测。**
 
 ```python
 W_conv2 = weight_variable([5, 5, 32, 64])
