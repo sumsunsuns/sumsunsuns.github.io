@@ -200,7 +200,7 @@ h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
 
 *注意这里是卷积，公式上是乘法，这就是CNN对比线性层回归的优势所在，卷积更能体现目标特征值，优化训练数据。*
 
-​	解释一波ReLU激活函数：全称修正线性单元（Rectified linear unit,ReLu）,个人理解简单来说就是:**保留evidence中有用的目标特征值，更好的挖掘相关特征，拟合训练数据。**详情参考：[ReLU激活函数：简单之美](https://blog.csdn.net/cherrylvlei/article/details/53149381)
+​	解释一波ReLU激活函数：全称修正线性单元（Rectified linear unit,ReLu）,个人理解简单来说就是:保留evidence中有用的目标特征值，更好的挖掘相关特征，拟合训练数据。详情参考：[ReLU激活函数：简单之美](https://blog.csdn.net/cherrylvlei/article/details/53149381)
 
 #### 第一层池化
 
