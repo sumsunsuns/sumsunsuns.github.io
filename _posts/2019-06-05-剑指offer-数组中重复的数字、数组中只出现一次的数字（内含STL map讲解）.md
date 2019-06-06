@@ -1,6 +1,6 @@
 ---
 layout:     post                    # 使用的布局（不需要改）
-title:      剑指offer-数组中重复的数字（内含STL map讲解）               # 标题 
+title:      剑指offer-数组中重复的数字、数组中只出现一次的数字（内含STL map讲解）               # 标题 
 subtitle:    #副标题
 date:       2019-06-05              # 时间
 author:     BY Tony Huang                     # 作者
@@ -14,6 +14,7 @@ tags:                               #标签
 ---
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2019060210315020.JPG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjAzNjYxNw==,size_16,color_FFFFFF,t_70)
 # 欢迎大家访问我的博客[Tony's Blog](https://yunfanzhilu.github.io/)，一起站在巨人的肩膀上！
+# 数组中重复的数字
 # 题目描述：
 在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。也不知道每个数字重复几次。请找出数组中任意一个重复的数字。 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。
 # 算法思想：
@@ -54,6 +55,41 @@ public:
 ```
 # 注意：
 1. 这个duplication是一个数组，用指针指向数组首地址，只有一个值
+# 数组中只出现一次的数字
+## 题目描述：
+一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字
+## 算法思想：
+建立map表，两次for循环遍历，一次统计原数组中各个数字出现的次数，第二次for循环，遍历只出现一次的数字
+## 代码：
+
+```
+class Solution {
+public:
+    void FindNumsAppearOnce(vector<int> data,int* num1,int *num2) {
+
+         int i,j,k=1,num;
+        map<int,int>m;
+        vector<int>temp;
+        int len;
+        len=data.size();
+        for(i=0;i<len;i++)
+        {
+            m[data[i]]++;
+         
+        }
+        for(j=0;j<data.size();j++)//这里要写原数组data.size(),不能写哈希表m.size()
+        {
+            if(m[data[j]]==k)
+            {
+                temp.push_back(data[j]);
+            }
+        }
+         num1[0]=temp[0];
+        num2[0]=temp[1];
+    }
+};
+```
+
 # map简述
 ## 概念
 map是STL中很有用的容器，**底层为红黑树**，它提供一对一(key,value)的hash,其中key只能出现一次，value为该key的值。
@@ -142,3 +178,4 @@ map<int, int>::iterator it;
 [C/C++——map的基本操作总结](https://blog.csdn.net/google19890102/article/details/51720305)
 [C++使用: C++中map的基本操作和用法](https://www.cnblogs.com/empty16/p/6395813.html)
 [C++ map使用详细版](https://blog.csdn.net/baidu_30594023/article/details/81913967)
+
