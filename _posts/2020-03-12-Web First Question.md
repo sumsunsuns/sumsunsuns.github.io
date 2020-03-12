@@ -28,9 +28,9 @@ tags:                               #标签
 ```
 
 ## 所遇问题：
->1.isset函数? 
->2.$_GET变量 ?
->3.如何利用?
+>1.isset函数
+>2.$_GET变量
+>3.如何利用
 
 
 ## 解答：
@@ -46,8 +46,10 @@ tags:                               #标签
 https://www.jianshu.com/p/d96e90f5a812
 
 ## 完整解答：
-> vps1.blue-whale.me:23331/php0/?key=areyousure
-> 同理post方法 可利用插件hackbar的post data 。输入key=areyousure。
+>vps1.blue-whale.me:23331/php0/?key=areyousure
 
+>同理post方法 可利用插件hackbar的post data 。输入key=areyousure。
+
+## 谢谢您的查阅，欢迎来访！
 
 
