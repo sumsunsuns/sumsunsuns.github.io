@@ -42,13 +42,14 @@ tags:                               #标签
 同理 预定义的 $_POST 变量用于收集来自 method="post" 的表单中的值。
 
 >3.经过分析代码，可知当GET提交的值key=areyousure，即可得到相应的flag。
-我一开始是打算安装火狐新版的hackerbar发现并不好用，旧版hackerbar 可点击[这里](https://www.jianshu.com/p/d96e90f5a812)下载。
+我一开始是打算安装火狐新版的hackerbar发现并不好用，旧版hackerbar 可点击[这里](https://www.jianshu.com/p/d96e90f5a812)下载.
+
 
 
 ## 完整解答：
 >vps1.blue-whale.me:23331/php0/?key=areyousure
 
->同理post方法,可利用插件hackbar的post data,输入key=areyousure。
+>同理post方法,可利用插件hackbar的post data,输入key=areyousure.
 
 ## 谢谢您的查阅，欢迎来访！
 
