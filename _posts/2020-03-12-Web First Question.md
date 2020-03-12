@@ -28,11 +28,24 @@ tags:                               #标签
 ```
 
 ## 所遇问题：
->1.isset函数   2.Get方法   3.如何利用？
+>1.isset函数? 2.$_GET变量 ?3.如何利用?
 
 
 ## 解答：
->
+>1.isset() 函数用于检测变量是否已设置并且非 NULL，
+若使用 isset() 测试一个被设置成 NULL 的变量，将返回 FALSE。
+说白了此题就是检测GET是否得到值。
+
+>2.在 PHP 中，预定义的 $_GET 变量用于收集来自 method="get" 的表单中的值。
+同理 预定义的 $_POST 变量用于收集来自 method="post" 的表单中的值。
+
+>3.经过分析代码，可知当GET提交的值key=areyousure，即可得到相应的flag。
+我一开始是打算安装火狐新版的hackerbar发现并不好用，旧版hackerbar 可在这里下载。
+https://www.jianshu.com/p/d96e90f5a812
+
+## 完整解答：
+>vps1.blue-whale.me:23331/php0/?key=areyousure
+>同理post方法 可利用插件hackbar的post  data 。输入key=areyousure。
 
 
 
