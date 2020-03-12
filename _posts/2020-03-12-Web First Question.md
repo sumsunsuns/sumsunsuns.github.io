@@ -48,7 +48,7 @@ https://www.jianshu.com/p/d96e90f5a812
 ## 完整解答：
 >vps1.blue-whale.me:23331/php0/?key=areyousure
 
->同理post方法 可利用插件hackbar的post data 。输入key=areyousure。
+>同理post方法,可利用插件hackbar的post data,输入key=areyousure。
 
 ## 谢谢您的查阅，欢迎来访！
 
