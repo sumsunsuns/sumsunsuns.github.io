@@ -43,7 +43,7 @@ tags:                               #标签
 
 >3.经过分析代码，可知当GET提交的值key=areyousure，即可得到相应的flag。
 我一开始是打算安装火狐新版的hackerbar发现并不好用，旧版hackerbar 可在这里下载。
-https://www.jianshu.com/p/d96e90f5a812
+>https://www.jianshu.com/p/d96e90f5a812
 
 ## 完整解答：
 >vps1.blue-whale.me:23331/php0/?key=areyousure
