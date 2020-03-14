@@ -9,6 +9,7 @@ catalog: true                       # 是否归档
 tags:                                    #标签
     - SQL注入  
     
+    
 ---
 
 ## 原理:
@@ -58,15 +59,14 @@ post注入的两个条件：1.用户可以控制传参，2.用户输入的语句
 
 > 8.最后获取数据，`search= ' Union Select 1,h3r31sfl4g,3 from f1agfl4gher3 # `，得到flag！
 
-> **flag{sql_ information_ schema_ hack}**
+ **flag{sql_ information_ schema_ hack}**
 
 
 
->
 
->
 
->[参考链接（一）：](https://www.fujieace.com/penetration-test/mysql-manual-injection.html)
->[参考链接（二）：](https://blog.csdn.net/qq_42097777/article/details/89088142)
+[参考链接（一）：](https://www.fujieace.com/penetration-test/mysql-manual-injection.html)
+
+[参考链接（二）：](https://blog.csdn.net/qq_42097777/article/details/89088142)
 
 ## 谢谢您的查阅，欢迎来访！
