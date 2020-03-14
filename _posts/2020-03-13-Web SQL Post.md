@@ -17,12 +17,18 @@ tags:                                    #标签
 
 ## 题目:
 >
+
 >一个简单的输入搜索框
+
+>
 
 ## 考察点：
 >sql注入中的post注入。
+
 >一般有两种方式：
+
 >第一种方式，通过burpsuit抓包存在一个文件中，然后通过sqlmap -r进行读取。
+
 >第二种方式，通过手工注入，构造payload，进行union查询。如果通过手工注入，怎么分析注入点，怎么构造payload，怎么获取表名列名，怎么读取数据呢？
 
 ## 解题过程：
@@ -52,7 +58,9 @@ post注入的两个条件：1.用户可以控制传参，2.用户输入的语句
 
 
 
+>
 
+>
 
 >[参考链接（一）：](https://www.fujieace.com/penetration-test/mysql-manual-injection.html)
 >[参考链接（二）：](https://blog.csdn.net/qq_42097777/article/details/89088142)
