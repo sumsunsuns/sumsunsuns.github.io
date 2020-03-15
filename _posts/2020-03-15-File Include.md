@@ -74,25 +74,25 @@ ha ha? you want flag? flag is here, but don't let you see!
 ## 知识点：
 
 
-**原理:**
+**1.原理:**
 
 PHP文件包含漏洞的产生原因是在通过PHP的函数引入文件时，由于传入的文件名没有经过合理的校验，从而操作了预想之外的文件，就可能导致意外的文件泄露甚至恶意的代码注入。最常见的就属于本地文件包含（Local File Inclusion）漏洞了。
 
 程序开发人员一般会把重复使用的函数写到单个文件中，需要使用某个函数时直接调用此文件，而无需再次编写，这中文件调用的过程一般被称为文件包含。
 
-**文件包含漏洞分为：**
-1.本地文件包含漏洞
+**2.文件包含漏洞分为：**
+(1).本地文件包含漏洞
 顾名思义，就是在网站服务器本身存在恶意文件，然后利用本地文件包含使用
-2.远程文件包含漏洞
+(2).远程文件包含漏洞
 远程文件包含就是调用其他网站的恶意文件进行打开
 
 
-**php常见的几个文件包含函数：**
+**3.php常见的几个文件包含函数：**
 `include()`,   `include_once()`,  `fopen()`, `require()`,  `require_once()`
 
-**php伪协议的分类**
+**4.php伪协议的分类**
 
-`php://input`
+>`php://input`
 
 php://input代表可以访问请求的原始数据，简单来说POST请求的情况下，php://input可以获取到post的数据。
 
@@ -100,17 +100,17 @@ php://input代表可以访问请求的原始数据，简单来说POST请求的�
 
 比较特殊的一点，enctype=”multipart/form-data”的时候 php://input 是无效的。
 
-`php://output`
+>`php://output`
 
 php://output 是一个只写的数据流，允许你以print和echo一样的方式写入到输出缓冲区。
 
-`php://filter`
+>`php://filter`
 
 php://filter是一种元封装器，设计用于数据流打开时的筛选过滤应用，也就是作为一种过滤器，可以使用在数据流产生的地方。
 
 类似的过滤器还有`string.rot13`、`string.strip_tags`、`zlib.deflate`和`zlib.inflate`等等，目前只要知道`convert.base64-encode`就可以。
 
-**URL 中包含点的常见形式:**
+**5.URL 中包含点的常见形式:**
 
 `?file = xxx `或者 `?file = xxx.php`
 
