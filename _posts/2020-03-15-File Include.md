@@ -90,8 +90,6 @@ PHP文件包含漏洞的产生原因是在通过PHP的函数引入文件时，�
 
 **php伪协议的分类**
 
-伪协议是文件包含的基础，理解伪协议的原理才能更好的利用文件包含漏洞。
-
 `php://input`
 
 php://input代表可以访问请求的原始数据，简单来说POST请求的情况下，php://input可以获取到post的数据。
@@ -108,13 +106,11 @@ php://output 是一个只写的数据流，允许你以print和echo一样的方�
 
 php://filter是一种元封装器，设计用于数据流打开时的筛选过滤应用，也就是作为一种过滤器，可以使用在数据流产生的地方。
 
-在php文档中，标准的定义是这样的：
-
 类似的过滤器还有`string.rot13`、`string.strip_tags`、`zlib.deflate`和`zlib.inflate`等等，目前只要知道`convert.base64-encode`就可以。
 
-URL 中包含点的常见形式
+**URL 中包含点的常见形式:**
 
-?file = xxx 或者 ?file = xxx.php
+`?file = xxx `或者 `?file = xxx.php`
 
 
 
