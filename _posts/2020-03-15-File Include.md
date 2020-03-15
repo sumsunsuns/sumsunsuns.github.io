@@ -73,7 +73,9 @@ ha ha? you want flag? flag is here, but don't let you see!
 
 ## 知识点：
 
-**原理**
+
+**原理:**
+
 PHP文件包含漏洞的产生原因是在通过PHP的函数引入文件时，由于传入的文件名没有经过合理的校验，从而操作了预想之外的文件，就可能导致意外的文件泄露甚至恶意的代码注入。最常见的就属于本地文件包含（Local File Inclusion）漏洞了。
 
 程序开发人员一般会把重复使用的函数写到单个文件中，需要使用某个函数时直接调用此文件，而无需再次编写，这中文件调用的过程一般被称为文件包含。
@@ -116,7 +118,7 @@ php://filter是一种元封装器，设计用于数据流打开时的筛选过�
 
 ## 解题过程：
 
-**1.** 首先分析页面代码，发现 `<li class="active"><a href="./?page=home">Home</a></li>`
+**1.** 首先分析页面代码，发现 `<li class="active"><a href="./?page=home">Home</a></li>`,
               `<li class="active"><a href="./?page=flag">Flag</a></li>`  ，可能出现文件包含漏洞.
 
 
