@@ -58,7 +58,6 @@ OK,简单的解释一下SQL语句.我们搜索的内容是 `' and 1=1 # `,代入
 
 **8.** 最后获取数据，`search= ' Union Select 1,h3r31sfl4g,3 from f1agfl4gher3 # `，得到flag！
 
-**flag{sql_ information_ schema_ hack}**
 
 
 
