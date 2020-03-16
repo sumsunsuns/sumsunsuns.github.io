@@ -137,23 +137,20 @@ php://filter是一种元封装器，设计用于数据流打开时的筛选过�
 
 **4.** 得到一组BASE64加密的字符串
 
-`aGEgaGE/IHlvdSB3YW50IGZsYWc/IGZsYWcgaXMgaGVyZTw/cGhwDQovLyB0cnkgdG8gcmVhZCB0aGlzIHNvdX
-JjZSBjb2RlDQovLyRmbGFnID0gJ2ZsYWd7cmVhbGx5X2Jhc2ljX3NraWxsX3dlYl9kb2dfc2hvdWxkX2tub3d9J
-zsNCj8+LCBidXQgZG9uJ3QgbGV0IHlvdSBzZWUhDQo=`
+`aGEgaGE/IHlvdSB3YW50IGZsYWc/IGZsYWcgaXMg...`
 
 **5.** 进行解密，得到flag！
 ``` php
 ha ha? you want flag? flag is here
 <?php
 // try to read this source code
-//$flag = 'flag{really_basic_skill_web_dog_should_know}';
+//$flag = 'flag{xxxxxxx}';
 ?>
 , but don't let you see!   
 
 ```
 
 
-**flag{really_basic_skill_web_dog_should_know}**
 
 
 
