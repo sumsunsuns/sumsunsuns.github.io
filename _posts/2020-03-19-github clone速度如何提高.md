@@ -4,7 +4,7 @@ title:      提高GitHub clone速度
 subtitle:   
 date:       2020-03-19
 author:     SGQ
-header-img: img/post-sgq-20200319.jpg
+header-img: img/post-bg-github.jpg
 catalog: true
 tags:
     - GitHub
