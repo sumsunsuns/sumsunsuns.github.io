@@ -19,11 +19,11 @@ tags:
   
 ## 具体过程：
 
-**1.Win+X 打开 Windows PowerShell（管理员) **
+**1.Win+X 打开 Windows PowerShell（管理员)**
 
  **2.输入notepad，打开记事本。然后用记事本打开C:\WINDOWS\system32\drivers\etc下的hosts。**
  
- **3.将下述IP地址与网站的解析复制到hosts的最后。**
+ **3.将下述IP地址与网站的解析复制到hosts的最后.**
  
 
 ``` javascript
@@ -53,17 +53,8 @@ tags:
 
 
 
-**4.最后别忘了刷新dns，cmd下输入：
+**4.最后别忘了刷新dns，cmd下输入：**
 `ipconfig /flushdns`
-
-
-
-
-
-
- 
-
-
 
 
 
