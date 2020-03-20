@@ -53,8 +53,15 @@ tags:
 
 
 
-** 最后别忘了刷新dns，cmd下输入：
-`ipconfig /flushdns 
+**4.最后别忘了刷新dns，cmd下输入：
+`ipconfig /flushdns`
+
+
+
+
+
+
+ 
 
 
 
@@ -67,7 +74,7 @@ tags:
 
 
 
-2020年03月20日 20时49分20秒
+
 
 
 
